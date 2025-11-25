@@ -56,7 +56,9 @@ public class StudentController {
 @GetMapping("/newStudent")
 public String newStudent(Model model){
   StudentDetail studentDetail = new StudentDetail();
-  studentDetail.setStudentsCourses(Arrays.asList(new StudentsCourses()));
+  studentDetail.setStudentsCourses(
+    Arrays.asList(new StudentsCourses())
+  );
   model.addAttribute("studentDetail", studentDetail);
     return "registerStudent";
 }
@@ -76,4 +78,5 @@ public String newStudent(Model model){
   public ResponseEntity<String> updateStudent(@RequestBody StudentDetail studentDetail) {
     service.updateStudent(studentDetail);
     return ResponseEntity.ok("更新処理が成功しました。");
-  }}
+  }
+}
