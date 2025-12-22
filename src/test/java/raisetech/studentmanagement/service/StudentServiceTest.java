@@ -7,8 +7,6 @@ import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -19,6 +17,7 @@ import raisetech.studentmanagement.controller.converter.StudentConverter;
 import raisetech.studentmanagement.data.Student;
 import raisetech.studentmanagement.data.StudentCourse;
 import raisetech.studentmanagement.domain.StudentDetail;
+import raisetech.studentmanagement.exception.TestException;
 import raisetech.studentmanagement.repository.StudentRepository;
 
 @ExtendWith(MockitoExtension.class)
@@ -71,6 +70,16 @@ class StudentServiceTest {
     assertEquals(student, actual.getStudent());
     assertEquals(courseList, actual.getStudentCourseList());
   }
+
+  @Test
+  void 受講生詳細検索_IDが存在しない場合に例外が投げられること() {
+    when(repository.searchStudent("999")).thenReturn(null);
+
+    assertThrows(TestException.class, () -> sut.searchStudent("999"));
+
+    verify(repository, times(1)).searchStudent("999");
+  }
+
 
   @Test
   void 受講生情報登録_受講生と受講生コースが登録されること() {
