@@ -29,11 +29,11 @@
   </update>
   <!-- 受講生コース情報更新　-->
   <update id="updateStudentCourse">
-    UPDATE students_courses SET course_name = #{courseName}WHERE id = #{id}
+    UPDATE students_courses SET course_name = #{courseName} WHERE id = #{id}
   </update>
   <!-- 受講生コース状況更新　-->
   <update id="updateCourseStatus">
-    UPDATE course_status SET status = #{status}WHERE id = #{id}
+    UPDATE course_status SET status = #{status} WHERE id = #{id}
   </update>
 
 </mapper>

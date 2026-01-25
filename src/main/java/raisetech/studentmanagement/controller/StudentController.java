@@ -81,8 +81,8 @@ public class StudentController {
    */
   @Operation(summary = "受講生情報更新", description = "受講生の情報を更新します。")
   @PostMapping("/updateStudent")
-  public ResponseEntity<Void> updateStudent(@RequestBody String body) {
-    service.registerStudent(null);
+  public ResponseEntity<Void> updateStudent(@RequestBody @Valid StudentDetail studentDetail) {
+    service.updateStudent(studentDetail);
     return ResponseEntity.ok().build();
   }
 
