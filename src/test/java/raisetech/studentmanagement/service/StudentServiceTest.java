@@ -36,19 +36,23 @@ class StudentServiceTest {
     sut = new StudentService(repository, converter);
   }
 
+
   @Test
   void 受講生詳細一覧検索_リポジトリとコンバーターの処理が適切に呼び出せていること() {
 
     List<Student> studentList = new ArrayList<>();
     List<StudentCourse> studentCourseList = new ArrayList<>();
     List<CourseStatus> courseStatusList = new ArrayList<>();
+
     when(repository.search()).thenReturn(studentList);
     when(repository.searchStudentCourseList()).thenReturn(studentCourseList);
+    when(repository.searchCourseStatusList()).thenReturn(courseStatusList);
 
     sut.searchStudentList();
 
     verify(repository, times(1)).search();
     verify(repository, times(1)).searchStudentCourseList();
+    verify(repository, times(1)).searchCourseStatusList();
     verify(converter, times(1)).convertStudentDetails(studentList, studentCourseList, courseStatusList);
   }
 

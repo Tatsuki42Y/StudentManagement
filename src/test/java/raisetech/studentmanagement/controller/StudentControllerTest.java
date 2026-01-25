@@ -21,6 +21,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import raisetech.studentmanagement.data.Student;
+import raisetech.studentmanagement.domain.StudentDetail;
 import raisetech.studentmanagement.service.StudentService;
 
 @WebMvcTest(StudentController.class)
@@ -85,7 +86,7 @@ class StudentControllerTest {
          "kanaName":"コウジ",
          "email":"test@example",
          "area":"奈良",
-         "age":"36",
+         "age":36,
          "sex":"男性",
          "remark":""
          },            
@@ -95,12 +96,12 @@ class StudentControllerTest {
            "studentId":"12",
         "courseName":"Javaコース",
         "courseStartAt":"2024-04-27T10:50:39.833614",
-        "courseStartEnd":"2025-04-27T10:50:39.833614",
+        "courseEndAt":"2025-04-27T10:50:39.833614"
         
                      }]
                      }
         """)).andExpect(status().isOk());
-    verify(service, times(1)).registerStudent(any());
+    verify(service, times(1)).updateStudent(any(StudentDetail.class));
   }
 
   @Test

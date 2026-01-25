@@ -51,7 +51,7 @@ public interface StudentRepository {
    * @param id 受講生ID
    * @return 受講生IDに紐づく受講生コース情報
    */
-  @Select("SELECT * FROM students_courses WHERE student_id = #{student_id}")
+  @Select("SELECT * FROM students_courses WHERE student_id = #{id}")
   List<StudentCourse> searchStudentCourse(String id);
 
   /**
