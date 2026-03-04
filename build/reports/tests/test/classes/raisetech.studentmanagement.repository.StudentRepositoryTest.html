@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.505s</div>
+<div class="counter">0.047s</div>
 <p>duration</p>
 </div>
 </td>
@@ -66,9 +66,6 @@
 <li>
 <a href="#">Standard output</a>
 </li>
-<li>
-<a href="#">Standard error</a>
-</li>
 </ul>
 <div class="tab">
 <h2>Tests</h2>
@@ -92,7 +89,7 @@
 </tr>
 <tr>
 <td class="success">受講生の更新が行えること()</td>
-<td class="success">0.493s</td>
+<td class="success">0.035s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -105,8 +102,8 @@
 <div class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>23:21:39.265 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [raisetech.studentmanagement.repository.StudentRepositoryTest]: StudentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-23:21:39.326 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration raisetech.studentmanagement.StudentManagementApplication for test class raisetech.studentmanagement.repository.StudentRepositoryTest
+<pre>2026-03-04T19:22:46.240+09:00  INFO 1801 --- [StudentManagement] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [raisetech.studentmanagement.repository.StudentRepositoryTest]: StudentRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-03-04T19:22:46.249+09:00  INFO 1801 --- [StudentManagement] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration raisetech.studentmanagement.StudentManagementApplication for test class raisetech.studentmanagement.repository.StudentRepositoryTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -117,21 +114,11 @@
 
  :: Spring Boot ::                (v3.3.5)
 
-2026-02-10T23:21:39.494+09:00  INFO 1861 --- [StudentManagement] [    Test worker] r.s.repository.StudentRepositoryTest     : Starting StudentRepositoryTest using Java 21.0.8 with PID 1861 (started by tatsukiyamamoto in /Users/tatsukiyamamoto/Downloads/StudentManagement)
-2026-02-10T23:21:39.494+09:00  INFO 1861 --- [StudentManagement] [    Test worker] r.s.repository.StudentRepositoryTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2026-02-10T23:21:39.669+09:00  INFO 1861 --- [StudentManagement] [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
-2026-02-10T23:21:39.761+09:00  INFO 1861 --- [StudentManagement] [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:bade2951-5190-4d9f-a191-15848ff5b999;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2026-02-10T23:21:39.978+09:00  INFO 1861 --- [StudentManagement] [    Test worker] r.s.repository.StudentRepositoryTest     : Started StudentRepositoryTest in 0.609 seconds (process running for 1.225)
-</pre>
-</span>
-</div>
-<div class="tab">
-<h2>Standard error</h2>
-<span class="code">
-<pre>WARNING: A Java agent has been loaded dynamically (/Users/tatsukiyamamoto/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.19/154da3a65b4f4a909d3e5bdec55d1b2b4cbb6ce1/byte-buddy-agent-1.14.19.jar)
-WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
-WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
-WARNING: Dynamic loading of agents will be disallowed by default in a future release
+2026-03-04T19:22:46.265+09:00  INFO 1801 --- [StudentManagement] [    Test worker] r.s.repository.StudentRepositoryTest     : Starting StudentRepositoryTest using Java 21.0.8 with PID 1801 (started by tatsukiyamamoto in /Users/tatsukiyamamoto/Downloads/StudentManagement)
+2026-03-04T19:22:46.266+09:00  INFO 1801 --- [StudentManagement] [    Test worker] r.s.repository.StudentRepositoryTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2026-03-04T19:22:46.344+09:00  INFO 1801 --- [StudentManagement] [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2026-03-04T19:22:46.390+09:00  INFO 1801 --- [StudentManagement] [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:3b48c719-cc5f-4c4f-abdf-db6bd9b88e0b;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-03-04T19:22:46.591+09:00  INFO 1801 --- [StudentManagement] [    Test worker] r.s.repository.StudentRepositoryTest     : Started StudentRepositoryTest in 0.339 seconds (process running for 2.387)
 </pre>
 </span>
 </div>
@@ -143,7 +130,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.14.3</a> at 2026/02/10 23:21:40</p>
+<a href="https://www.gradle.org">Gradle 8.14.3</a> at 2026/03/04 19:22:46</p>
 </div>
 </div>
 </body>
