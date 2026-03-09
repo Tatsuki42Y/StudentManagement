@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="raisetech.studentmanagement.service.StudentServiceTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-03-04T10:22:46.648Z" hostname="TatsukisMacBook-Air.local" time="0.087">
+  <properties/>
+  <testcase name="受講生情報更新_受講生と受講生コースが更新されること()" classname="raisetech.studentmanagement.service.StudentServiceTest" time="0.069"/>
+  <testcase name="受講生コース状況更新_状況が更新されること()" classname="raisetech.studentmanagement.service.StudentServiceTest" time="0.003"/>
+  <testcase name="受講生詳細一覧検索_リポジトリとコンバーターの処理が適切に呼び出せていること()" classname="raisetech.studentmanagement.service.StudentServiceTest" time="0.005"/>
+  <testcase name="受講生詳細検索_IDが存在しない場合に例外が投げられること()" classname="raisetech.studentmanagement.service.StudentServiceTest" time="0.001"/>
+  <testcase name="受講生詳細検索_正常に取得できること()" classname="raisetech.studentmanagement.service.StudentServiceTest" time="0.002"/>
+  <testcase name="受講生情報登録_受講生と受講生コースが登録されること()" classname="raisetech.studentmanagement.service.StudentServiceTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

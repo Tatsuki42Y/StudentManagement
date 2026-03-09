@@ -8,12 +8,12 @@ on:
 
 env:
  EC2_USER: 'ec2-user'
- EC2_HOST: '18.183.176.29'
+ EC2_HOST: '18.179.118.140'
  SRC_PATH: 'build/libs/*.jar'
  DEST_PATH: '/home/ec2-user/StudentManagement.jar'
 
 jobs:
-  build:
+  deploy:
 
     runs-on: ubuntu-latest
     steps:
@@ -38,7 +38,7 @@ jobs:
 
     - name: SCP Copy Application to EC2
       env:
-        PRIVATE_KEY: ${{ secrets.AWS_EC2_PRIVATE_KEY}}
+        PRIVATE_KEY: ${{ secrets.AWS_EC2_PRIVATE_KEY }}
       run: |
         echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
         scp -o StrictHostKeyChecking=no -i private_key $SRC_PATH $EC2_USER@$EC2_HOST:$DEST_PATH
@@ -57,7 +57,7 @@ jobs:
           else
           cat <<EOL | sudo tee -a /etc/systemd/system/StudentManagement.service
           [Unit]
-          Description = StudentManagement app
+          Description = StudentManagement App
         
           [Service]
           ExecStart = java -jar ${DEST_PATH}
