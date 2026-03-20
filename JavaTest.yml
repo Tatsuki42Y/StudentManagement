@@ -8,7 +8,7 @@ on:
 
 env:
  EC2_USER: 'ec2-user'
- EC2_HOST: '18.181.168.32'
+ EC2_HOST: '43.207.150.208'
  SRC_PATH: 'build/libs/*.jar'
  DEST_PATH: '/home/ec2-user/StudentManagement.jar'
 
@@ -52,6 +52,7 @@ jobs:
         envs: DEST_PATH
         script: |
           sudo yum update -y
+          
           
           if sudo systemctl status StudentManagement 2>&1 | grep "Active: active (running)" ; then
             sudo systemctl restart StudentManagement
