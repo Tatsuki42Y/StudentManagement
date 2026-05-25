@@ -32,8 +32,33 @@ RaiseTech Javaフルコースの学習課題として作成し、Javaバック�
   * **Swagger UI**によるAPI仕様の可視化と動作確認
   * **GitHub Actions**を活用した、テスト・ビルド・AWS（EC2）へのデプロイ自動化
 
-## 💡 こだわったポイント・学んだこと
-* **実務を意識したエラーハンドリングとデータ管理**
-  * 単に機能を作るだけでなく、ユーザーやフロントエンド側が扱いやすいエラーレスポンスの設計や、データの安全性を考慮した論理削除の実装にこだわりました。
-* **CI/CDパイプラインによる効率化**
-  * コードを変更してGitHubにプッシュするだけで、テストからAWSへのデプロイまでが自動で走る環境を構築したことで、モダンな開発フローの手触り感を学ぶことができました。
+## 📂 ディレクトリ構成
+
+本プロジェクトは、保守性と拡張性を高めるために、役割ごとにレイヤーを明確に分離した**レイヤードアーキテクチャ**を採用しています。
+
+```text
+StudentManagement/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── raisetech/
+│   │   │       └── studentmanagement/
+│   │   │           ├── Controller/       # リクエスト受付・画面制御
+│   │   │           │   ├── converter/    # データ変換ロジック（Entity ⇄ DTO 等）
+│   │   │           │   └── StudentController.java
+│   │   │           ├── data/             # データベースのエンティティ（データモデル）
+│   │   │           │   ├── Student.java
+│   │   │           │   └── StudentsCourses.java
+│   │   │           ├── domain/           # 業務ロジックで扱うコアとなるドメインオブジェクト
+│   │   │           │   └── StudentDetail.java
+│   │   │           ├── repository/       # データベース操作（MyBatis Mapper等）のインターフェース
+│   │   │           │   └── StudentRepository.java
+│   │   │           ├── service/          # ビジネスロジックを処理する層
+│   │   │           │   └── StudentService.java
+│   │   │           ├── ServletInitializer.java
+│   │   │           └── StudentManagementApplication.java # アプリケーションの起動クラス
+│   │   └── resources/
+│   │       └── application.properties    # データベース接続などの環境設定ファイル
+│   └── test/                             # JUnitによるテストコード
+├── build.gradle                          # 依存関係・ビルド設定
+└── settings.gradle
