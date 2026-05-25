@@ -16,6 +16,40 @@ RaiseTech Javaフルコースの学習課題として作成し、Javaバック�
 | **CI/CD** | GitHub Actions |
 | **インフラ / 運用** | AWS (EC2, RDS, ALB), systemd |
 
+##  ディレクトリ構成
+
+StudentManagement/
+├── build/
+├── gradle/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── raisetech/
+│   │   │       └── studentmanagement/
+│   │   │           ├── Controller/
+│   │   │           │   ├── converter/
+│   │   │           │   │   └── StudentConverter.java  # データ変換ロジック
+│   │   │           │   └── StudentController.java     # リクエスト受付・画面制御
+│   │   │           ├── data/
+│   │   │           │   ├── Student.java               # 学生の基本データモデル（Entity等）
+│   │   │           │   └── StudentsCourses.java       # 受講コースなどの紐付けデータモデル
+│   │   │           ├── domain/
+│   │   │           │   └── StudentDetail.java         # 業務ロジックで扱う学生の詳細ドメインオブジェクト
+│   │   │           ├── repository/
+│   │   │           │   └── StudentRepository.java     # データベース操作（SQL等）のインターフェース
+│   │   │           ├── service/
+│   │   │           │   └── StudentService.java        # 処理の統合や条件判定を行うビジネスロジック
+│   │   │           ├── ServletInitializer.java
+│   │   │           └── StudentManagementApplication.java
+│   │   └── resources/
+│   │       └── application.properties
+│   └── test/
+├── build.gradle
+├── gradlew
+├── gradlew.bat
+└── settings.gradle
+
+
 ## ⚙️ 主な機能
 
 * **受講生管理 (CRUD + 検索)**
